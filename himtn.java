@@ -17,7 +17,7 @@ public class himtn {
         for (int x = 0; x < N; x++)
             for (int y = 0; y < N; y++){
                 Point p = new Point(x, y, N);
-                distances[p.index] = 10000;
+                distances[p.index] = Integer.MAX_VALUE;
                 heights[p.index] = s.nextInt();
                 unvisited.add(p);
             }
