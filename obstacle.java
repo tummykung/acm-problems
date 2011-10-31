@@ -9,8 +9,11 @@ public class obstacle {
     public static void main(String[] args){
         // Setup
         Scanner s = new Scanner(System.in);
+        int problem = 0;
+        
         while (true){
             int N = s.nextInt();
+            problem++;
             if (N == 0)
                 break;
                     int[] heights = new int[N*N];
@@ -43,7 +46,7 @@ public class obstacle {
                 distances[p.index] = Math.min(alternate, distances[p.index]);
             }
         }
-        System.out.println(distances[N*N-1]);
+        System.out.println("Problem " + problem + ": " + distances[N*N-1]);
         }
     }
     
