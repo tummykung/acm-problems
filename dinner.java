@@ -12,15 +12,17 @@ public class dinner {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int teams = scan.nextInt();
-        while (teams != 0) {
-            people = 0;
+        
+        while (true) {
+            int teams = scan.nextInt();
+            if (teams == 0) break;
+
             int tables = scan.nextInt();
             numNodes = teams + tables + 2;
             
             previous = new int[numNodes];
             adjacencies = new int[numNodes][numNodes];
-
+            people = 0;
             // Add links between source and team
             for (int team = 0; team < teams; team++) {
                 int size = scan.nextInt();
@@ -42,7 +44,7 @@ public class dinner {
                     adjacencies[reIndexTable][1+team] = 1;
                 }
             }
-            
+
             // Compute max flow
             int flow = 0;
             while (true) {
